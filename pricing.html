@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Tamara Pratt - AI Startup Consultancy</title>
+    <meta name="description" content="Custom pricing and engagement models for AI startup consultancy. Tailored GTM, pricing strategy, and technical advisory for AI founders and venture studios.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #0066FF;
+            --color-primary-dark: #0052CC;
+            --color-background: #FFFFFF;
+            --color-surface: #F8FAFC;
+            --color-text: #0F172A;
+            --color-text-muted: #64748B;
+            --color-border: #E2E8F0;
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+            --container-width: 1100px;
+            --transition: all 0.2s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Navigation */
+        header {
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        nav {
+            height: 4.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--color-text-muted);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-primary);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--color-border);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--color-surface);
+            border-color: var(--color-text);
+        }
+
+        /* Hero Section */
+        .pricing-hero {
+            padding: 6rem 0 4rem;
+            text-align: center;
+        }
+
+        .pricing-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-hero p {
+            font-size: 1.25rem;
+            color: var(--color-text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Pricing Grid */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 6rem;
+        }
+
+        .pricing-card {
+            padding: 2.5rem;
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            background: var(--color-background);
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+
+        .pricing-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .pricing-card.featured {
+            background: var(--color-surface);
+            border-color: var(--color-text);
+        }
+
+        .plan-name {
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .plan-desc {
+            font-size: 1rem;
+            color: var(--color-text-muted);
+            margin-bottom: 2rem;
+            min-height: 3rem;
+        }
+
+        .plan-features {
+            margin-bottom: 2.5rem;
+            flex-grow: 1;
+        }
+
+        .plan-features li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+            color: var(--color-text);
+        }
+
+        .plan-features li::before {
+            content: "→";
+            margin-right: 0.75rem;
+            color: var(--color-primary);
+            font-weight: bold;
+        }
+
+        /* Comparison Table Section */
+        .comparison-section {
+            padding: 6rem 0;
+            background-color: var(--color-surface);
+            border-radius: 24px;
+            margin-bottom: 6rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 1.25rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .comparison-table th {
+            font-weight: 600;
+            color: var(--color-text);
+            font-size: 1.1rem;
+        }
+
+        .comparison-table td {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+        }
+
+        .check { color: var(--color-primary); font-weight: bold; }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto 6rem;
+        }
+
+        .faq-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .faq-item h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .faq-item p {
+            color: var(--color-text-muted);
+        }
+
+        /* Footer */
+        footer {
+            padding: 5rem 0 3rem;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-logo { margin-bottom: 1.5rem; display: block; }
+
+        .footer-brand p {
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+            max-width: 280px;
+        }
+
+        .footer-links h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+        }
+
+        .footer-links a:hover {
+            color: var(--color-primary);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+            font-size: 0.875rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1.25rem;
+        }
+
+        .social-icons svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover svg {
+            color: var(--color-primary);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .pricing-hero h1 { font-size: 2.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <span style="font-weight:700;font-size:1.25rem">Tamara Pratt</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="pricing.html" style="color: var(--color-text);">Pricing</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="contact.html" class="btn btn-primary">Book a Call</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="pricing-hero">
+            <div class="container">
+                <span class="plan-name">Consultancy Models</span>
+                <h1>Strategic Investment in AI Growth</h1>
+                <p>We don't offer generic startup playbooks. We provide technical depth and GTM precision for founders who need to move from "shiny demo" to repeatable revenue.</p>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="pricing-grid">
+                <!-- Strategy Sprint -->
+                <div class="pricing-card">
+                    <span class="plan-name">Foundation</span>
+                    <div class="plan-price">Custom Pricing</div>
+                    <p class="plan-desc">Best for idea-stage founders and pre-seed startups establishing their wedge.</p>
+                    <ul class="plan-features">
+                        <li>ICP & Positioning Framework</li>
+                        <li>AI Data Strategy Design</li>
+                        <li>Wedge Identification</li>
+                        <li>Founding Offer Structure</li>
+                        <li>Technical Stack Review</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-outline">Start Discovery</a>
+                </div>
+
+                <!-- GTM & Scale -->
+                <div class="pricing-card featured">
+                    <span class="plan-name">Accelerate</span>
+                    <div class="plan-price">Custom Pricing</div>
+                    <p class="plan-desc">For seed and Series A startups needing repeatable sales and scale playbooks.</p>
+                    <ul class="plan-features">
+                        <li>AI Pricing & Packaging Model</li>
+                        <li>Sales Motion Development</li>
+                        <li>Repeatable Scale Playbook</li>
+                        <li>Usage-based Tiering Strategy</li>
+                        <li>Fractional GTM Advisory</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary">Hire for Growth</a>
+                </div>
+
+                <!-- Fractional Advisory -->
+                <div class="pricing-card">
+                    <span class="plan-name">Partner</span>
+                    <div class="plan-price">Custom Pricing</div>
+                    <p class="plan-desc">Ongoing advisory for venture studios and CTOs scaling complex AI products.</p>
+                    <ul class="plan-features">
+                        <li>Board & Investor Readiness</li>
+                        <li>Advanced Data Compliance</li>
+                        <li>Continuous Performance Monitoring</li>
+                        <li>Partner Ecosystem GTM</li>
+                        <li>White-glove Technical Nuance</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-outline">Inquire for Details</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="comparison-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why an AI Consultant vs. General Advisor?</h2>
+                    <p>AI products require a unique overlap of technical infrastructure and GTM strategy.</p>
+                </div>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Strategic Feature</th>
+                            <th>General Advisor</th>
+                            <th>AI Startup Consultancy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Infrastructure Advisory</td>
+                            <td>Generic cloud advice</td>
+                            <td>LLM stack, fine-tuning vs. RAG choice</td>
+                        </tr>
+                        <tr>
+                            <td>Pricing Strategy</td>
+                            <td>Seat-based models</td>
+                            <td>Usage-based & tokens integration</td>
+                        </tr>
+                        <tr>
+                            <td>ICP Definition</td>
+                            <td>Broad market segments</td>
+                            <td>Data-specific wedges and AI-ready ICPS</td>
+                        </tr>
+                        <tr>
+                            <td>Technical Nuance</td>
+                            <td>High-level only</td>
+                            <td>Hands-on drift & performance monitoring</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="faq-section container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-item">
+                <h3>What does "Custom Pricing" actually mean?</h3>
+                <p>AI consultancy isn't a one-size-fits-all subscription. We price based on the scope of the project, whether it's a 2-week strategy sprint, a 3-month GTM build-out, or ongoing fractional advisory. We ensure the ROI always outweighs the investment.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Do you work with non-technical founders?</h3>
+                <p>Yes. We specialize in helping non-technical founders bridge the gap between business vision and technical execution, ensuring you aren't over-building or choosing unworkable roadmaps.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How is this different from an incubator?</h3>
+                <p>Incubators provide generic resources for many startups. Tamara Pratt provides deep, specific attention to your AI pricing experiments, technical stack, and repeatable sales motions—getting you to revenue faster than broad-spectrum programs.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>When is the best time to hire a consultant?</h3>
+                <p>Ideally, when you have a prototype or are planning your wedge. Hiring a consultant early prevents the "shiny demo" trap and ensures you're building for a real ICP from Day 1.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <span style="font-weight:700;font-size:1.25rem">Tamara Pratt</span>
+                    </a>
+                    <p>AI startup consultancy to launch, grow, and scale high-performance AI businesses in 2025 and beyond.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Practice</h4>
+                    <ul>
+                        <li><a href="index.html">GTM Playbook</a></li>
+                        <li><a href="pricing.html">Pricing Strategy</a></li>
+                        <li><a href="about.html">Technical Advisory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="pricing.html">Plans</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tamara Pratt. Built for AI Founders.</p>
+                <p><a href="https://www.por.mobi">www.por.mobi</a></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
